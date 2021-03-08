@@ -1,0 +1,133 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>element設定事件(js)</title>
+<style>
+.red{ color:red; font-size:20px;}
+</style>
+<script>
+	
+function init(){
+	
+		document.getElementById("ifr").onload = loadFinish;
+		document.getElementById("inp").onkeydown = onKeyDown;
+		document.getElementById("btn").onclick = onClick;
+		document.getElementById("pwd").onkeydown = onKeyDownPwd;
+		document.getElementById("cb1").onclick = clickBox;
+		document.getElementById("cb2").onclick = clickBox;
+		document.getElementById("rd1").onclick = clickRadio;
+		document.getElementById("rd2").onclick = clickRadio;
+		document.getElementById("sel").onchange = onChange;
+		
+		  
+}	
+	
+function onKeyDown(e){
+		alert("onKeyDown :"+e.target.value);
+}	
+
+function onClick(){
+		alert("onClick");
+}	
+
+function onKeyDownPwd(){
+		var p = document.getElementById("pwd");
+		alert("onKeyDownPwd: "+p.value);
+}
+
+function onChange(e){
+		alert("onChange: "+e.target.value+" 被選取");
+}	
+
+function loadFinish(){
+		alert("iframe load finish");	
+}
+
+function clickBox(){
+		var cb1 = document.getElementById("cb1");
+		var cb2 = document.getElementById("cb2");
+		var msg = "";
+		
+		if(cb1.checked){
+				msg+="checkbox1 被選取\n";
+		}else{
+				msg+="checkbox1 沒被選取\n";
+		}
+		
+		if(cb2.checked){
+				msg+="checkbox2 被選取\n";
+		}else{
+				msg+="checkbox2 沒被選取\n";
+		}
+		alert(msg);
+}
+
+
+function clickRadio(){
+		var rds = document.getElementsByName("rd");
+		var msg = "";
+		for(var i=0; i<rds.length; i++){
+				var obj = rds[i];
+				if(obj.checked){
+						msg = obj.id+" 被選取";
+						break;
+				}
+		}
+		alert(msg);
+}
+	
+</script>
+</head>
+
+<body onload="init();">
+<div class="red">★通常我們程式部門負責js和php，html的部份是由美編部門負責，所以我們會盡量把js抽離html上，以免互相影響。</div>
+<br>
+<br>
+一.input元素<br>
+<br>
+1.text 輸入框<br>
+<input type="text" id="inp" name="inp" value="">
+<br>
+<br>
+2.button 按鈕<br>
+<input type="button" id="btn" name="btn" value="click">
+<br>
+<br>
+3.password 密碼<br>
+<input type="password" id="pwd" name="pwd" value="" >
+<br>
+<br>
+4.checkbox 複選<br>
+<input type="checkbox" id="cb1" name="cb1" >
+<input type="checkbox" id="cb2" name="cb2" checked >
+<br>
+<br>
+5.radio 單選<br>
+<input type="radio" id="rd1" name="rd" >
+<input type="radio" id="rd2" name="rd" checked >
+<br>
+<br>
+<br>
+二.select 下拉式選單<br>
+<br>
+<select id="sel" name="sel">
+	<option id="FT" name="FT" value="FT">足球</option>
+	<option id="BK" name="BK" value="BK">籃球</option>
+	<option id="TN" name="TN" value="TN" selected>網球</option>
+	<option id="VB" name="VB" value="VB">排球</option>
+	<option id="BS" name="BS" value="BS">棒球</option>
+</select>
+<br>
+<br>
+三.iframe (用於顯示網頁或取資料)<br>
+<br>
+<iframe id="ifr" name="ifr" width="500px" height="500px" src="http://qqcro666-mem.cvssp2017.com" ></iframe>
+<br>
+<a href="http://rdtest999.cvssp2017.com/lesson/3.html">back</a>
+<a href="http://rdtest999.cvssp2017.com/lesson/5.html">next</a>
+
+
+
+</body>
+
+</html>

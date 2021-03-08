@@ -1,0 +1,25 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雙人對戰象棋</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class='board' id='board'>
+</div>
+<div class="start_btn">
+    <input type="button" name="start" value="開始對局" id="start">
+    <label for="start">準備開始</label>
+</div>
+<p>友善的輪流下象棋吧:D</p>
+</body>
+</html>
+<script src="js/common.js"></script>
+<script src="js/play.js"></script>
+<script src="js/start.js"></script>
+
+<script>
+    var new_play = new ChineseChess( 'board' );
+    document.getElementById( 'start' ).onclick = new_play.start;
+</script>

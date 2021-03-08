@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JS parse table</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>
+        <script src="fastTemplate.js"></script>
+        </script>
+    </head>
+    <body onload="init();">
+
+   
+    <div id="div_show" name="div_show"></div>
+			
+    <div id="div_model" name="div_model" style="display:none;">
+	    <table>
+		    <tr>
+		    		<td>部門</td>
+                    <td>日期</td>
+                    <td>人員</td>
+                    <td>上班</td>
+                    <td>下班</td>
+                    <td>遲到</td>
+		    </tr>
+		
+		    <!-- START DYNAMIC BLOCK: aaa -->
+		    <tr>
+            <td>Depart</td>
+            <td id="date1">*Date*</td>
+            <td>*Employee*</td>
+            <td>*Work*</td>
+            <td>*Getoff*</td>
+            <td id="late">*Late*</td>
+		    </tr>
+		    <!-- END DYNAMIC BLOCK: aaa -->
+	</table>
+    </div>	      
+    </body>
+</html>
